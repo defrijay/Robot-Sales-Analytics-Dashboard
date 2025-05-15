@@ -59,7 +59,7 @@ Berikut adalah deskripsi file data yang digunakan:
 
 Analisis dilakukan dengan melakukan agregasi di berbagai dataset sehingga terbentuk master dataset yang bernama `SalesOrdersDetail.csv` di **BigQuery** dan divisiualisasikan dashboard laporannya di **looker studio**.
 
-### Query Agregasi
+### Query
 
 ```sql
 SELECT
@@ -89,7 +89,7 @@ ORDER BY
   order_date;
 ```
 
-### Hasil Query Agregasi
+### Hasil Query
 ![Tabel Sales Detail](assets/sales_detail_dataset.png)
 
 ### Dashboard
