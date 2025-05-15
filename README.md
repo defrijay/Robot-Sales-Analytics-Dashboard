@@ -103,7 +103,7 @@ Link Dashboard = [Robot Product Sales Analysis](https://lookerstudio.google.com/
 
 - Looker Studio untuk visualisasi
 
-- Excel dan CSV untuk penyimpanan dataste awal
+- Excel dan CSV untuk penyimpanan dataset dan tabel awal
 
 ## 📊 Insight dan Rekomendasi Penjualan
 
