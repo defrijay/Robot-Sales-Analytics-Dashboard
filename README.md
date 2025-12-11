@@ -2,21 +2,21 @@
 
 ![Cover Project](./cover.png)
 
-Proyek ini bertujuan untuk melakukan analisis mendalam terhadap data penjualan robot dari berbagai perspektif produk, kategori, pelanggan, dan wilayah menggunakan SQL dan visualisasi dashboard interaktif.
+This project aims to perform an in-depth analysis of robot sales data from various product, category, customer, and region perspectives using SQL and interactive dashboard visualization.
 
-## 🧾 Deskripsi Proyek
+## 🧾 Project Description
 
-Dashboard ini dirancang untuk memberikan wawasan bisnis yang dapat ditindaklanjuti bagi pemangku kepentingan, seperti:
+This dashboard is designed to provide actionable business insights for stakeholders, such as:
 
-- Total keseluruhan sales
-- Total keseluruhan sales berdasarkan kategori produk
-- Total keseluruhan qty berdasarkan kategori produk
-- Total sales berdasarkan kota 
-- Total qty berdasarkan kota
-- Top 5 kategori produk yang paling tinggi salesnya
-- Top 5 kategori produk yang paling tinggi qtynya
+- Total sales
+- Total sales by product category
+- Total quantity by product category
+- Total sales by city
+- Total quantity by city
+- Top 5 highest-selling product categories
+- Top 5 highest-selling product categories
 
-## 📂 Struktur Proyek
+## 📂 Project Structure
 
 ├── data/
 
@@ -47,19 +47,19 @@ Dashboard ini dirancang untuk memberikan wawasan bisnis yang dapat ditindaklanju
 
 ## 🗃️ Dataset
 
-Berikut adalah deskripsi file data yang digunakan:
+Here is a description of the data files used:
 
-| Nama File               | Deskripsi                                      |
-|------------------------|-----------------------------------------------|
-| `Products.csv`         | Data produk termasuk nama dan harga dasar     |
-| `ProductCategory.csv`  | Data kategori produk                          |
-| `Customers.csv`        | Informasi pelanggan termasuk segment dan kota |
-| `Orders.csv`           | Data pesanan (tanggal, channel, dsb)         |
-| `OrdersSalesDetail.csv` | Detail penjualan per produk per pesanan     |
+| File Name | Description |
+|---------|----------------------------------------------------|
+| `Product.csv` | Product data including name and base price |
+| `ProductCategory.csv` | Product category data |
+| `Customer.csv` | Customer information including segment and city |
+| `Order.csv` | Order data (date, channel, etc.) |
+| `OrderSalesDetail.csv` | Sales details per product per order |
 
-## 🔍 Metodologi Analisis
+## 🔍 Analysis Methodology
 
-Analisis dilakukan dengan melakukan agregasi di berbagai dataset sehingga terbentuk master dataset yang bernama `SalesOrdersDetail.csv` di **BigQuery** dan divisiualisasikan dashboard laporannya di **looker studio**.
+The analysis was performed by aggregating various datasets to create a master dataset named `SalesOrdersDetail.csv` in **BigQuery** and visualizing the report dashboard in **looker studio**.
 
 ### Query
 
@@ -91,83 +91,82 @@ ORDER BY
   order_date;
 ```
 
-### Hasil Query
+### Query Results
 ![Tabel Sales Detail](assets/sales_detail_dataset.png)
 
 ### Dashboard
 
-Link Dashboard = [Robot Product Sales Analysis](https://lookerstudio.google.com/reporting/e3c0fe6d-7698-4d39-9d90-b74eaa64965a)
+Dashboard Link= [Robot Product Sales Analysis](https://lookerstudio.google.com/reporting/e3c0fe6d-7698-4d39-9d90-b74eaa64965a)
 
-![Dashboard analsisi](dashboard/Robots_Sales_Products_Dashboard.png)
+![Dashboard analsis](dashboard/Robots_Sales_Products_Dashboard.png)
 
-## Tools & Teknologi
-- BigQuery untuk eksekusi query
+## Tools & Technology
+- BigQuery for query execution
 
-- Looker Studio untuk visualisasi
+- Looker Studio for visualization
 
-- Excel dan CSV untuk penyimpanan dataset dan tabel awal
+- Excel and CSV for storing datasets and initial tables
 
-## 📊 Insight dan Rekomendasi Penjualan
+## 📊 Sales Insights and Recommendations
 
-### 📌 1. Fokus pada Kategori dengan Penjualan Tinggi
-**Drone Kits** dan **Robots** memiliki penjualan tertinggi berdasarkan nilai (`total_sales`).
+### 📌 1. Focus on High-Sales Categories
+Drone Kits and Robots have the highest sales by value (`total_sales`).
 
-**Usulan:**
-- Lanjutkan promosi besar untuk kategori ini (diskon, bundling).
-- Tambahkan varian produk atau fitur baru dalam kategori ini.
-- Tawarkan loyalty points atau cashback untuk pembelian produk dalam kategori ini.
-
----
-
-### 📌 2. Optimalisasi Produk dengan Kuantitas Tinggi
-**eBooks** dan **Young Learning Kits** memiliki volume penjualan tinggi tetapi nilai penjualannya lebih rendah.
-
-**Usulan:**
-- Naikkan margin dengan bundling atau upselling produk terkait (misalnya: jual eBooks + alat praktikum).
-- Tingkatkan pengalaman digital agar eBooks jadi lebih premium (akses eksklusif, sertifikat, dsb).
+**Suggestion:**
+- Continue major promotions for these categories (discounts, bundling).
+- Add new product variants or features in these categories.
+- Offer loyalty points or cashback for purchases of products in these categories.
 
 ---
 
-### 📌 3. Fokus pada Kota dengan Penjualan Tertinggi
-Kota seperti **San Antonio**, **Henderson**, **Jacksonville**, dan **El Paso** menunjukkan penjualan tinggi.
+### 📌 2. Optimize High-Quantity Products
+eBooks and Young Learning Kits have high sales volume but lower sales value.
 
-**Usulan:**
-- Tingkatkan personalisasi dan kampanye iklan berbasis lokasi di kota-kota ini.
-- Kerja sama dengan komunitas lokal, toko offline, atau even workshop.
-
----
-
-### 📌 4. Potensi Kota dengan Order Tinggi tetapi Nilai Rendah
-Kota seperti **Phoenix** dan **Indianapolis** memiliki jumlah pesanan tinggi tetapi mungkin nilai per order-nya rendah.
-
-**Usulan:**
-- Naikkan *Average Order Value (AOV)* melalui promosi “Beli lebih, hemat lebih”.
-- Evaluasi apakah produk-produk murah terlalu mendominasi dan coba dorong produk dengan harga lebih tinggi.
+**Suggestion:**
+- Increase margins by bundling or upselling related products (e.g., selling eBooks + lab tools).
+- Enhance the digital experience to make eBooks more premium (exclusive access, certificates, etc.).
 
 ---
 
-### 📌 5. Diversifikasi Produk di Kategori Kurang Populer
-Beberapa kategori seperti **Drone Kits** atau **Training Materials** punya kuantitas rendah tapi nilai tinggi.
+### 📌 3. Focus on Cities with Highest Sales
+Cities like **San Antonio**, **Henderson**, **Jacksonville**, and **El Paso** show high sales.
 
-**Usulan:**
-- Edukasi pasar tentang manfaat produk kategori ini (pakai konten video/tutorial).
-- Gunakan produk kategori populer sebagai *entry-point* untuk menjual produk dari kategori yang lebih *niche*.
+**Suggestion:**
+- Increase personalization and location-based advertising campaigns in these cities.
+- Partner with local communities, brick-and-mortar stores, or even workshops.
 
 ---
 
-### 📌 6. Analisis Perilaku Pembelian
-Karena data memiliki atribut `order_date` dan `email`, segmentasi pelanggan bisa dilakukan berdasarkan:
+### 📌 4. Potential Cities with High Orders but Low Value
+Cities like **Phoenix** and **Indianapolis** have high order volumes but may have low value per order.
 
-- Pelanggan setia vs. baru.
-- Frekuensi pembelian.
+**Suggestion:**
+- Increase Average Order Value (AOV) through “Buy more, save more” promotions.
+- Evaluate whether low-priced products are overly dominant and try pushing higher-priced products.
 
-**Usulan:**
-- Kirimkan penawaran eksklusif untuk pelanggan setia.
-- Berikan insentif pada pembelian pertama untuk pelanggan baru.
+---
 
+### 📌 5. Product Diversification in Less Popular Categories
+Some categories, such as Drone Kits or Training Materials, have low quantity but high value.
 
-## 🙋‍♂️ Kontributor
-Nama: Defrizal Yahdiyan Risyad
+**Suggestion:**
+- Educate the market about the benefits of products in these categories (using video content/tutorials).
+- Use popular category products as an entry point to sell products from more niche categories.
+
+---
+
+### 📌 6. Purchase Behavior Analysis
+Because the data has `order_date` and `email` attributes, customer segmentation can be done based on:
+
+- Loyal vs. new customers.
+- Purchase frequency.
+
+**Suggestion:**
+- Send exclusive offers to loyal customers.
+- Provide incentives for first purchases for new customers.
+
+## 🙋‍♂️ Contributor
+Name: Defrizal Yahdiyan Risyad
 
 Email: defrijay@gmail.com
 
