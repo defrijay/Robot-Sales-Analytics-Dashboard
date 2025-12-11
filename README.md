@@ -1,5 +1,7 @@
 # 📊 Robot Sales Analytics Dashboard
 
+![Cover Project](./cover.png)
+
 Proyek ini bertujuan untuk melakukan analisis mendalam terhadap data penjualan robot dari berbagai perspektif—produk, kategori, pelanggan, dan wilayah—menggunakan SQL dan visualisasi dashboard interaktif.
 
 ## 🧾 Deskripsi Proyek
