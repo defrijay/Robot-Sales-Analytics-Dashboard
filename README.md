@@ -94,7 +94,7 @@ ORDER BY
 
 ### Dashboard
 
-Link Dashboard = [Robot Product Sales Analysis](https://lookerstudio.google.com/reportinge3c0fe6d-7698-4d39-9d90-b74eaa64965a)
+Link Dashboard = [Robot Product Sales Analysis](https://lookerstudio.google.com/reporting/e3c0fe6d-7698-4d39-9d90-b74eaa64965a)
 
 ![Dashboard analsisi](dashboard/Robots_Sales_Products_Dashboard.png)
 
